@@ -1,0 +1,67 @@
+﻿<testsuite
+name="VCAC"
+rxversion="4.1.5.17134"
+id="1d5e1787-1ab2-4944-88d6-8110bb892c65"
+reportfilename="%S_%Y%M%D_%T.rxlog"
+reporttemplatefolder=""
+reportxslfilename=""
+placescreenshotsinfolder="True"
+reportwriteinterval="30000ms"
+reportcompress="False"
+enabletracingscreenshots="True"
+description=""
+reportlevel="Info;20">
+	<content>
+		<testcase
+		name="VCAC+SSO_Deploy"
+		id="515dafdf-0dd1-46c9-9008-149db48899d2">
+			<testmodule
+			name="VCAC_SSO"
+			id="3d34658f-b8ac-49a8-8a77-f8af5de9bbd0"
+			ref="b664ab9f-0168-4138-8d53-e628254b7ea2"
+			type="UserCode"/>
+			<testcase
+			name="Iaas_Install"
+			id="7f8193eb-b932-42b4-b0a4-18272900ba10">
+				<testmodule
+				name="CustomInstall"
+				id="7be06496-ca42-444c-9e41-70eba6173d20"
+				ref="5608368b-0df0-4df4-9985-0b2d9272a5e9"
+				type="UserCode"/>
+				<testmodule
+				name="InstIaas"
+				id="265966ec-638b-475b-9dca-7eac4964f54d"
+				ref="0b0c616e-3f13-44a9-8f04-9c8d94542641"
+				type="UserCode"/>
+				<testcase
+				name="Tenent"
+				id="dbd6bf45-a906-4cb5-b742-6fb6b25969cf">
+					<testmodule
+					name="VCACTenent"
+					id="2a4c99ea-bc15-4be5-a197-0296bf611ce2"
+					ref="1ff8ddac-db09-453c-b042-0ed79ebe9bff"
+					type="UserCode"/>
+				</testcase>
+			</testcase>
+		</testcase>
+	</content>
+	<testconfigurations
+	default="TestRun">
+		<testconfiguration
+		name="TestRun">
+			<testcase
+			id="1d5e1787-1ab2-4944-88d6-8110bb892c65"/>
+			<testcase
+			id="515dafdf-0dd1-46c9-9008-149db48899d2"/>
+			<testcase
+			id="7f8193eb-b932-42b4-b0a4-18272900ba10"/>
+			<testcase
+			id="dbd6bf45-a906-4cb5-b742-6fb6b25969cf"/>
+		</testconfiguration>
+	</testconfigurations>
+	<references>
+		<reference>
+			Globalization.dll
+		</reference>
+	</references>
+</testsuite>

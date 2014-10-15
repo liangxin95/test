@@ -1,0 +1,119 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{56ED56F9-C192-474F-9912-BF442FEAFA19}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ITBM</RootNamespace>
+    <AssemblyName>VCAC</AssemblyName>
+    <RanorexVersion>4</RanorexVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <projectdefaultrepository>5d511a0e-8ea4-41d4-96fd-9e1a0493af1b</projectdefaultrepository>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="Ranorex.Core, Version=$(RanorexVersion)" />
+    <Reference Include="Ranorex.Plugin.ChromeWeb, Version=$(RanorexVersion)" />
+    <Reference Include="Ranorex.Plugin.Flex, Version=$(RanorexVersion)" />
+    <Reference Include="Ranorex.Plugin.Java, Version=$(RanorexVersion)" />
+    <Reference Include="Ranorex.Plugin.Mobile, Version=$(RanorexVersion)" />
+    <Reference Include="Ranorex.Plugin.MozillaWeb, Version=$(RanorexVersion)" />
+    <Reference Include="Ranorex.Plugin.Msaa, Version=$(RanorexVersion)" />
+    <Reference Include="Ranorex.Plugin.Office, Version=$(RanorexVersion)" />
+    <Reference Include="Ranorex.Plugin.RawText, Version=$(RanorexVersion)" />
+    <Reference Include="Ranorex.Plugin.Sap, Version=$(RanorexVersion)" />
+    <Reference Include="Ranorex.Plugin.Web, Version=$(RanorexVersion)" />
+    <Reference Include="Ranorex.Plugin.Win32, Version=$(RanorexVersion)" />
+    <Reference Include="Ranorex.Plugin.WinForms, Version=$(RanorexVersion)" />
+    <Reference Include="Ranorex.Plugin.Wpf, Version=$(RanorexVersion)" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <id>d435e597-d5ad-4971-a608-cb1e24be2a8b</id>
+    </Compile>
+    <Compile Include="Config.cs">
+      <id>8aa701d1-34f8-4b7c-b5fc-ea109a603813</id>
+    </Compile>
+    <Compile Include="Program.cs">
+      <id>d90e5310-7304-4d7e-b7e0-54a28b22b497</id>
+    </Compile>
+    <Compile Include="script\CustomInstall.cs">
+      <id>90b879d3-0ff6-43e0-88f7-6bc15e0d47d4</id>
+    </Compile>
+    <Compile Include="script\InstIaas.cs">
+      <id>780dca98-7117-4603-bbb5-926561f97653</id>
+    </Compile>
+    <Compile Include="script\VCACTenent.cs">
+      <id>edbc2992-289f-4818-9ac5-9f907412c38d</id>
+    </Compile>
+    <Compile Include="script\VCAC_SSO.cs">
+      <id>c5bd0643-cb2b-4575-a30e-c39a4e504c1e</id>
+    </Compile>
+    <Compile Include="UI\Solution.cs">
+      <id>b80d4e47-c2ea-4414-9b8f-fdd2d27ecf2e</id>
+    </Compile>
+    <Compile Include="UI\LC.cs">
+      <id>b5aa0977-6426-4f9f-ad93-3cdfdd15c1f5</id>
+    </Compile>
+    <Compile Include="UI\UI.cs">
+      <id>7e02e7fe-9892-4cf2-af16-6cfb611df64e</id>
+    </Compile>
+    <None Include="app.config">
+      <id>1d05174b-384d-477c-930a-43fdc13fe557</id>
+    </None>
+    <None Include="cfirefox.bat">
+      <id>09339608-78de-4737-9dda-631c9cddbd56</id>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="config.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <id>c563f372-ca85-45c7-a3c0-aff771cc9265</id>
+    </None>
+    <None Include="s.txt">
+      <id>e4635c00-dbc7-4ebd-b4c2-c1768281f8ba</id>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="VCAC.rxtst">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <id>56c6ded5-58eb-4a5e-90d1-4e575fa18fb0</id>
+    </Content>
+  </ItemGroup>
+  <Import Condition="Exists('$(MSBuildExtensionsPath)\Ranorex$(RanorexVersion)\Ranorex.MSBuild.Targets')" Project="$(MSBuildExtensionsPath)\Ranorex$(RanorexVersion)\Ranorex.MSBuild.Targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Globalization\Globalization.csproj">
+      <Project>{3B37266C-33C0-4571-B875-99196847A188}</Project>
+      <Name>Globalization</Name>
+    </ProjectReference>
+    <Folder Include="script">
+      <id>d0329dea-be1b-446a-9bc2-b2837ad000db</id>
+    </Folder>
+    <Folder Include="UI">
+      <id>25d3de99-bb00-4f46-b53e-94f0d0bad668</id>
+    </Folder>
+  </ItemGroup>
+</Project>
