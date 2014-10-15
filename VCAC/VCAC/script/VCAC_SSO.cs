@@ -124,7 +124,11 @@ namespace ITBM
 				string[] lines = { @"echo $'\r' >> /etc/hosts",
 					@"echo """ + VCACIP + " " + VCACHostName + "\"" + " >> /etc/hosts",
 					@"/usr/lib/vmware-identity-va-mgmt/firstboot/vmware-identity-va-firstboot.sh --domain vsphere.local --password " + Config.VCPassword,
+<<<<<<< HEAD
 					@"echo ""$(hostname)"" > /etc/vmware-identity/hostname.txt"};
+=======
+					@"echo ""$(hostname):7444"" > /etc/vmware-identity/hostname.txt"};
+>>>>>>> fcc3df4b6f85d084d97cfe308cf58ec0ca620ce6
 				System.IO.File.WriteAllLines(@"s.txt", lines);
 				int configSSO2ExitCode = DeployOvaTool.plinkMethod(Config.PlinkParam2 + SSOIP);
 				if(configSSO2ExitCode != 0 ){
