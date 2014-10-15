@@ -1,0 +1,7 @@
+echo $'\r' >> /etc/hosts
+echo "10.117.5.207 pek2-office-07-dhcp207.eng.vmware.com" >> /etc/hosts
+/usr/lib/vmware-identity-va-mgmt/firstboot/vmware-identity-va-firstboot.sh --domain vsphere.local --password vmware
+hostname
+sleep 60
+hostname
+echo "$(hostname):7444" > /etc/vmware-identity/hostname.txt
